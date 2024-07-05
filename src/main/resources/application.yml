@@ -6,11 +6,8 @@ eureka:
     service-url:
       defaultZone: ${EUREKA_URL:http://localhost:8761/eureka}
   instance:
-    preferIpAddress: false
-    non-secure-port-enabled: true
-    secure-port-enabled: false
-    non-secure-port: ${server.port}
-    secure-port: 443
+    preferIpAddress: true # For local development. Set to false if you want to use the hostname in a DNS-enabled environment
+    hostname: ${HOSTNAME:localhost}
 
 ## Configuration for App name and Spring Data
 spring:
